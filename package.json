@@ -6,5 +6,8 @@
   "bin": "init.js",
   "keywords": [],
   "author": "Mickey Burks <brks.mck@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
 }
