@@ -17,7 +17,7 @@ const targetDir = path.join(
   process.cwd(),
   process.argv[2],
 );
-const templateDir = path.resolve('./template');
+const templateDir = path.join(__dirname, './template');
 
 mkdir(targetDir)
   .then(copyAll)
