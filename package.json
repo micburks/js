@@ -1,0 +1,10 @@
+{
+  "name": "@micburks/init-script",
+  "version": "1.0.0",
+  "description": "Scripting scaffold",
+  "main": "init.js",
+  "bin": "init.js",
+  "keywords": [],
+  "author": "Mickey Burks <brks.mck@gmail.com>",
+  "license": "MIT"
+}
