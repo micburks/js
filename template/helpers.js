@@ -1,8 +1,8 @@
 
-const __fs = require('fs');
-const __path = require('path');
-const __util = require('util');
-const __readline = require('readline')
+import __fs from 'fs';
+import __path from 'path';
+import __util from 'util';
+import __readline from 'readline';
 
 const readDir = __util.promisify(__fs.readdir);
 const unlink = __util.promisify(__fs.unlink);
@@ -25,15 +25,12 @@ for (const arg of process.argv.slice(2)) {
   }
 }
 
-module.exports = {
-  readDirVerbose,
-  recursiveRemove,
-  prompt,
+export {
   args,
   options,
-}
+};
 
-async function readDirVerbose(path) {
+export async function readDirVerbose(path) {
   const contents = await readDir(path, {withFileTypes: true});
   return contents.map(file => ({
     name: file.name,
@@ -41,7 +38,7 @@ async function readDirVerbose(path) {
   }));
 }
 
-async function prompt(question) {
+export async function prompt(question) {
   const rl = __readline.createInterface({
     input: process.stdin,
     output: process.stdout
@@ -55,7 +52,7 @@ async function prompt(question) {
   });
 }
 
-async function recursiveRemove(dirPath) {
+export async function recursiveRemove(dirPath) {
   const distFiles = await readDirVerbose(dirPath);
   if (distFiles) {
     await Promise.all(

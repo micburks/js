@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-const __fs = require('fs');
-const __path = require('path');
-const __util = require('util');
-const __cp = require('child_process');
-const __helpers = require('./helpers.js');
+import __fs from 'fs';
+import __path from 'path';
+import __util from 'util';
+import __cp from 'child_process';
+import * as __helpers from './helpers.js';
 
 const pathJoin = __path.join;
 const pathResolve = __path.resolve;

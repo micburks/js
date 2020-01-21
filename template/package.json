@@ -1,0 +1,18 @@
+{
+  "name": "a-script",
+  "version": "0.0.0",
+  "private": true,
+  "description": "A script",
+  "main": "main.js",
+  "bin": "main.js",
+  "type": "module",
+  "keywords": [],
+  "author": "Mickey Burks <brks.mck@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "./main.js"
+  },
+  "engines": {
+    "node": ">=13.2.0"
+  }
+}
