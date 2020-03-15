@@ -1,14 +1,8 @@
 
-import __fs from 'fs';
+import {promises as __fs} from 'fs';
 import __path from 'path';
 import __util from 'util';
 import __readline from 'readline';
-
-const readDir = __util.promisify(__fs.readdir);
-const unlink = __util.promisify(__fs.unlink);
-const rmdir = __util.promisify(__fs.rmdir);
-
-const pathJoin = __path.join;
 
 const args = [];
 const options = {};
@@ -31,7 +25,7 @@ export {
 };
 
 export async function readDirVerbose(path) {
-  const contents = await readDir(path, {withFileTypes: true});
+  const contents = await __fs.readDir(path, {withFileTypes: true});
   return contents.map(file => ({
     name: file.name,
     type: file.isDirectory() ? 'dir' : 'file',
@@ -58,12 +52,12 @@ export async function recursiveRemove(dirPath) {
     await Promise.all(
       distFiles.map(file => {
         if (file.type === 'dir') {
-          return recursiveRemove(pathJoin(dirPath, file.name));
+          return recursiveRemove(__path.join(dirPath, file.name));
         } else { 
-          return unlink(pathJoin(dirPath, file.name))
+          return __fs.unlink(__path.join(dirPath, file.name))
         }
       })
     );
-    await rmdir(dirPath);
+    await __fs.rmdir(dirPath);
   }
 }

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import __fs from 'fs';
+import {promises as __fs} from 'fs';
 import __path from 'path';
 import __util from 'util';
 import __cp from 'child_process';
@@ -11,15 +11,15 @@ const pathResolve = __path.resolve;
 const pathDirname = __path.dirname;
 const pathBasename = __path.basename;
 
-const readDir = __util.promisify(__fs.readdir);
+const readDir = __fs.readdir;
 const readDirVerbose = __helpers.readDirVerbose;
-const readFile = __util.promisify(__fs.readFile);
-const writeFile = __util.promisify(__fs.writeFile);
-const copyFile = __util.promisify(__fs.copyFile);
+const readFile = __fs.readFile;
+const writeFile = __fs.writeFile;
+const copyFile = __fs.copyFile;
 
-const exec = __util.promisify(__cp.exec);
-const spawn = __util.promisify(__cp.spawn);
-const execFile = __util.promisify(__cp.execFile);
+const exec = __util.promisify(__cp.exec); // usage
+const spawn = __util.promisify(__cp.spawn); // usage
+const execFile = __util.promisify(__cp.execFile); // usage
 
 const prompt = __helpers.prompt;
 
