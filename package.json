@@ -1,6 +1,6 @@
 {
   "name": "@micburks/init-script",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Scripting scaffold",
   "main": "init.js",
   "bin": "init.js",
