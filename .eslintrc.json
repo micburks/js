@@ -26,5 +26,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "globals": {}
+  "globals": {
+    "Promise": true
+  }
 }
