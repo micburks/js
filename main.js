@@ -4,7 +4,7 @@ import {promises as __fs} from 'fs';
 import __path from 'path';
 import __util from 'util';
 import __cp from 'child_process';
-import * as __helpers from './helpers.js';
+import * as __helpers from './helpers/index.js';
 
 const pathJoin = __path.join;
 const pathResolve = __path.resolve;
@@ -27,7 +27,4 @@ const prompt = __helpers.prompt;
 const args = __helpers.args;
 const options = __helpers.options;
 
-(async () => {
-  console.log('new script', {args, options});
-  // TODO
-})();
+console.log('new script', {args, options});
