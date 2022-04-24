@@ -1,10 +1,14 @@
 {
   "root": true,
+  "parser": "@typescript-eslint/parser",
   "extends": [
     "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
   "plugins": [
+    "@typescript-eslint",
     "prettier",
     "import"
   ],
@@ -17,7 +21,8 @@
       }
     ],
     "arrow-body-style": "off",
-    "prefer-arrow-callback": "off"
+    "prefer-arrow-callback": "off",
+    "react/react-in-jsx-scope": "off"
   },
   "env": {
     "node": true
