@@ -6,7 +6,7 @@ import __util from 'util';
 import __cp from 'child_process';
 import * as __helpers from './helpers/index.js';
 
-/* eslint-disable no-unused-vars */
+/* eslint-disable */
 const pathJoin = __path.join;
 const pathResolve = __path.resolve;
 const pathDirname = __path.dirname;
@@ -30,3 +30,5 @@ const args = __helpers.args;
 const options = __helpers.options;
 
 console.log('new script', {args, options});
+
+await __helpers.startServer({staticFiles: './public'});
